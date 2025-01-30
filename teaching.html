@@ -33,23 +33,32 @@
     <!-- password restricted area -->
     <!--
 
-    <div id="container">
-        <h2>Correct Password</h2>
-        <h3>Welcome to TutorialsPoint..</h3>
-    </div>
-    <script>
-        let password = "tutorial";
-        (function passcodeprotect() {
-            let passcode = prompt("Enter PassCode");
-            while (passcode !== password) {
-                alert("Incorrect PassCode");
-                return passcodeprotect();
-            }
-        }());
-        alert('Welcome To The TP..!');
-        document.getElementById("container")
-            .style.display = "block";
-    </script>
+    <h2>Enter Password</h2>
+<form id="pswd">
+    <input type="password" id="validate" 
+           placeholder="Enter Password">
+    <button type="button" onclick="fun()">Submit</button>
+</form>
+<div id="container">
+    <h2>Correct Password</h2>
+    <h3>Welcome to TutorialsPoint..</h3>
+</div>
+<script>
+    function fun() {
+        let inputPswd = document.getElementById("validate")
+                                .value;
+        let correctPswd = "TutorialsPoint";
+        if (inputPswd === correctPswd) {
+            document.getElementById("container")
+                .style.display = "block";
+            document.getElementById("pswd")
+                .style.display = "none";
+        } else {
+            alert("Incorrect password!");
+        }
+    }
+</script>
+    
     -->
 
 
