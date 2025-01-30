@@ -53,31 +53,30 @@
     <section id="materials">
         <h2>Teaching materials</h2>
 
-        <!--
-
         <!-- split into different classes -->
 
         <!-- Class 1 -->
-
+        <!-- nested comments need -[space]- instead of -- -->
+<!--
         <h3>Class 1</h3>
         
-        <!-- form here used to afterwards undisplay the PW field -->
+        <!- - form here used to afterwards undisplay the PW field - ->
         <form id="pswd1">
             
-        <!-- placeholder = what is written in box (grey) ... id = identity of/pointer towards input ... onclick = if clicked on "Submit", then fun1() gets started -->
+        <!- - placeholder = what is written in box (grey) ... id = identity of/pointer towards input ... onclick = if clicked on "Submit", then fun1() gets started - ->
             
             <input type="password" id="validate1" placeholder="Enter Password">
             <button type="button" onclick="fun1()">Submit</button>
         </form>
 
-        <!-- div = division/section ... container = what will be displayed after correct PW -->
+        <!- - div = division/section ... container = what will be displayed after correct PW - ->
         <div id="container1">
             <a href="./CV.pdf" target="_blank">CV</a>
             <p>Test field</p>
             <p><a href="https://www.google.de/" target="_blank">Google</a></p>
         </div>
 
-        <!-- JavaScript to encrypt/display the container after correct PW -->
+        <!- - JavaScript to encrypt/display the container after correct PW - ->
         <script>
             function fun1() {
                 let inputPswd = document.getElementById("validate1").value; // input from the PW
@@ -91,7 +90,7 @@
             }
         </script>
 
-        <!-- Class 2 -->
+        <!- - Class 2 - ->
         <h3>Class 2</h3>
         
         <form id="pswd2">            
@@ -103,7 +102,7 @@
             <p>Test field</p>
         </div>
 
-        <!-- JavaScript to encrypt/display the container after correct PW -->
+        <!- - JavaScript to encrypt/display the container after correct PW - ->
         <script>
             function fun2() {
                 let inputPswd = document.getElementById("validate2").value;
@@ -116,9 +115,9 @@
                 }
             }
         </script>
-    -->
     </section>
 
+-->
 
     <!-- Footer Section -->
     <footer>
