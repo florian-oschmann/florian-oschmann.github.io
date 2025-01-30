@@ -31,7 +31,7 @@
     </section>
 
     <!-- password restricted area -->
-<style>
+    <style>
         #container {
             display: none;
             background-color: #f0f8ff;
@@ -39,25 +39,27 @@
         }
     </style>
     
-    <h2>Enter Password</h2>
+    <h2>Teaching materials</h2>
 <form id="pswd">
+    <!-- placeholder = what is written in box (grey); onclick = if clicked on "Submit", then fun() gets started -->
     <input type="password" id="validate" 
            placeholder="Enter Password">
     <button type="button" onclick="fun()">Submit</button>
 </form>
+
+<!-- container = what will be displayed after correct PW -->
 <div id="container">
     <a href="./CV.pdf" target="_blank">CV</a>
 </div>
+
+<!-- JavaScript to encrypt/display the container after correct PW -->
 <script>
     function fun() {
-        let inputPswd = document.getElementById("validate")
-                                .value;
-        let correctPswd = "TutorialsPoint";
+        let inputPswd = document.getElementById("validate").value;
+        let correctPswd = "Mathclass1";
         if (inputPswd === correctPswd) {
-            document.getElementById("container")
-                .style.display = "block";
-            document.getElementById("pswd")
-                .style.display = "none";
+            document.getElementById("container").style.display = "block";
+            <!-- document.getElementById("pswd").style.display = "none"; -->
         } else {
             alert("Incorrect password!");
         }
