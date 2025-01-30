@@ -33,12 +33,19 @@
     <!-- password restricted area -->
     <!-- reference: https://www.tutorialspoint.com/how-to-password-protect-a-page-using-only-html-css-and-javascript -->
 
-    <!-- style of just the container -->
+    <!-- style of just the container1 -->
+    
     <style>
-        #container {
+        #container1 {
             display: none;
-            background-color: #f0f8ff;
+            background-color: #f9f9f9;
             text-align: left;
+        }
+
+        #container2 {
+        display: none;
+        background-color: #f9f9f9;
+        text-align: left;
         }
     </style>
     
@@ -46,9 +53,12 @@
     <section id="materials">
         <h2>Teaching materials</h2>
 
+        <!--
+
         <!-- split into different classes -->
-        
+
         <!-- Class 1 -->
+
         <h3>Class 1</h3>
         
         <!-- form here used to afterwards undisplay the PW field -->
@@ -73,7 +83,7 @@
                 let inputPswd = document.getElementById("validate1").value; // input from the PW
                 let correctPswd = "Mathclass1"; // correct PW; freely to choose
                 if (inputPswd === correctPswd) {
-                    document.getElementById("container1").style.display = "block"; // displaying the container1
+                    document.getElementById("container1").style.display = "block"; // block the container display setting
                     document.getElementById("pswd1").style.display = "none"; // removing the PW box from display
                 } else {
                     alert("Incorrect password!");
@@ -106,6 +116,7 @@
                 }
             }
         </script>
+    -->
     </section>
 
 
