@@ -22,13 +22,33 @@
         <a href="./teaching.html">Teaching</a>
     </nav>
 
-    <!-- About Section -->
+    <!-- Teaching Section -->
     <section id="teaching">
         <h2>Teaching</h2>
         <p>
             Upcoming classes and material
         </p>
     </section>
+
+    <!-- password restricted area -->
+
+    <div id="container">
+        <h2>Correct Password</h2>
+        <h3>Welcome to TutorialsPoint..</h3>
+    </div>
+    <script>
+        let password = "tutorial";
+        (function passcodeprotect() {
+            let passcode = prompt("Enter PassCode");
+            while (passcode !== password) {
+                alert("Incorrect PassCode");
+                return passcodeprotect();
+            }
+        }());
+        alert('Welcome To The TP..!');
+        document.getElementById("container")
+            .style.display = "block";
+    </script>
 
 
     <!-- Footer Section -->
