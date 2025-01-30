@@ -39,36 +39,41 @@
             text-align: left;
         }
     </style>
-    
-    <h2>Teaching materials</h2>
-    <!-- form here used to afterwards undisplay the PW field -->
-<form id="pswd">
-    <!-- placeholder = what is written in box (grey)
-    onclick = if clicked on "Submit", then fun() gets started -->
-    <input type="password" id="validate" placeholder="Enter Password">
-    <button type="button" onclick="fun()">Submit</button>
-</form>
 
-<!-- container = what will be displayed after correct PW -->
-<div id="container">
-    <a href="./CV.pdf" target="_blank">CV</a>
-    <p>Test field</p>
-    <p><a href="https://www.google.de/" target="_blank">Google</a></p>
-</div>
+    <section id="materials">
+        <h2>Teaching materials</h2>
+        
+        <!-- form here used to afterwards undisplay the PW field -->
+        
+        <form id="pswd">
+        <!-- placeholder = what is written in box (grey)
+        onclick = if clicked on "Submit", then fun() gets started -->
+            
+            <input type="password" id="validate" placeholder="Enter Password">
+            <button type="button" onclick="fun()">Submit</button>
+        </form>
 
-<!-- JavaScript to encrypt/display the container after correct PW -->
-<script>
-    function fun() {
-        let inputPswd = document.getElementById("validate").value; // input from the PW
-        let correctPswd = "Mathclass1"; // correct PW; to choose freely
-        if (inputPswd === correctPswd) {
-            document.getElementById("container").style.display = "block"; // displaying the container
-            document.getElementById("pswd").style.display = "none"; // removing the PW box from display
-        } else {
-            alert("Incorrect password!");
-        }
-    }
-</script>
+        <!-- container = what will be displayed after correct PW -->
+        <div id="container">
+            <a href="./CV.pdf" target="_blank">CV</a>
+            <p>Test field</p>
+            <p><a href="https://www.google.de/" target="_blank">Google</a></p>
+        </div>
+
+        <!-- JavaScript to encrypt/display the container after correct PW -->
+        <script>
+            function fun() {
+                let inputPswd = document.getElementById("validate").value; // input from the PW
+                let correctPswd = "Mathclass1"; // correct PW; to choose freely
+                if (inputPswd === correctPswd) {
+                    document.getElementById("container").style.display = "block"; // displaying the container
+                    document.getElementById("pswd").style.display = "none"; // removing the PW box from display
+                } else {
+                    alert("Incorrect password!");
+                }
+            }
+        </script>
+    </section>
 
 
     <!-- Footer Section -->
