@@ -16,7 +16,7 @@
     <!-- Navigation Bar -->
     <nav>
         <a href="./index.html">About</a>
-        <a href="./research.html">Research Activities</a>
+        <a href="./research.html">Research</a>
         <a href="./publications.html">Publications</a>
         <a href="./contact.html">Contact</a>
         <a href="./teaching.html">Teaching</a>
@@ -33,22 +33,6 @@
 
     <!-- password restricted area -->
     <!-- reference: https://www.tutorialspoint.com/how-to-password-protect-a-page-using-only-html-css-and-javascript -->
-
-    <!-- style of just the container1 -->
-    
-    <style>
-        #container1 {
-            display: none;
-            background-color: #f9f9f9;
-            text-align: left;
-        }
-
-        #container2 {
-        display: none;
-        background-color: #f9f9f9;
-        text-align: left;
-        }
-    </style>
     
     <!-- separate section "materials" inside nav bar "teaching" -->
     <section id="materials">
@@ -56,28 +40,27 @@
 
         <!-- split into different classes -->
 
-        <!-- Class 1 -->
-        <!-- nested comments need -[space]- instead of -- -->
-<!--
+        <!-- Class 1; division ~ section; display suppresses display, erase for showing -->
+        <div style="display: none">
         <h3>Class 1</h3>
         
-        <!- - form here used to afterwards undisplay the PW field - ->
+        <!-- form here used to afterwards undisplay the PW field -->
         <form id="pswd1">
             
-        <!- - placeholder = what is written in box (grey) ... id = identity of/pointer towards input ... onclick = if clicked on "Submit", then fun1() gets started - ->
+        <!-- placeholder = what is written in box (grey) ... id = identity of/pointer towards input ... onclick = if clicked on "Submit", then fun1() gets started -->
             
             <input type="password" id="validate1" placeholder="Enter Password">
             <button type="button" onclick="fun1()">Submit</button>
         </form>
 
-        <!- - div = division/section ... container = what will be displayed after correct PW - ->
-        <div id="container1">
+        <!-- container = what will be displayed after correct PW -->
+        <div id="container1" style="display: none; text-align: left">
             <a href="./CV.pdf" target="_blank">CV</a>
             <p>Test field</p>
             <p><a href="https://www.google.de/" target="_blank">Google</a></p>
         </div>
 
-        <!- - JavaScript to encrypt/display the container after correct PW - ->
+        <!-- JavaScript to encrypt/display the container after correct PW -->
         <script>
             function fun1() {
                 let inputPswd = document.getElementById("validate1").value; // input from the PW
@@ -90,8 +73,10 @@
                 }
             }
         </script>
+        </div>
 
-        <!- - Class 2 - ->
+        <!-- Class 2 -->
+        <div style="display: none">
         <h3>Class 2</h3>
         
         <form id="pswd2">            
@@ -99,11 +84,11 @@
             <button type="button" onclick="fun2()">Submit</button>
         </form>
 
-        <div id="container2">
+        <div id="container2" style="display: none; text-align: left">
             <p>Test field</p>
         </div>
 
-        <!- - JavaScript to encrypt/display the container after correct PW - ->
+        <!-- JavaScript to encrypt/display the container after correct PW -->
         <script>
             function fun2() {
                 let inputPswd = document.getElementById("validate2").value;
@@ -117,8 +102,7 @@
             }
         </script>
     </section>
-
--->
+</div>
 
     <!-- Footer Section -->
     <footer>
