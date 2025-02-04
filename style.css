@@ -9,10 +9,10 @@ header {
     padding: 20px 0;
     text-align: center;
     height: 150px;
-    background-image: url(BG3_pic.jpg);
-    background-position: left;
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-image: url(BG3_pic.jpg), url(BG_pic.jpg);
+    background-position: left, right;
+    background-size: contain, contain;
+    background-repeat: no-repeat, no-repeat;
 }
 
 body {
