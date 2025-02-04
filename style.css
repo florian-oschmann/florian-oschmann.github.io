@@ -8,7 +8,7 @@ header {
     color: #fff;
     padding: 20px 0;
     text-align: center;
-    background-image: url(BG3_pic.jpg), url(BG_pic.jpg);
+    background-image: url(BG_pic.jpg), url(BG3_pic.jpg);
     background-position: right top, left top;
     background-size: contain;
     background-repeat: no-repeat, no-repeat;
