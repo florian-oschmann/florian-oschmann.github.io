@@ -10,7 +10,7 @@ header {
     text-align: center;
     height: 150px;
     background-image: url(BG3_pic.jpg), url(BG_pic.jpg);
-    background-position: left top, right top;
+    background-position: left, right;
     background-size: contain, contain;
     background-repeat: no-repeat, no-repeat;
 }
