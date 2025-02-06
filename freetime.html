@@ -1,45 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Florian Oschmann - Freetime</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="changelanguage.js"></script>
-    </head>
- <!-- Include the contents of the header directly in each page -->
- <header>
-     <h1>Florian Oschmann</h1>
-     <p>Researcher | Academic | Musician</p>
- </header>
- 
- <!-- Language Dropdown Menu -->
- <select id="language-dropdown" onchange="changeLanguage()">
-     <option value="en">English</option>
-     <option value="de">Deutsch</option>
-     <option value="cz">&Ccaron;e&scaron;tina</option>
- </select>
- <body>
- 
-     <!-- Navigation Bar -->
-     <div id="navbar-container"></div>
-     <script>
-         // Function to load the navigation bar
-         function loadNavbar() {
-             fetch('navbar.html')
-                 .then(response => response.text())
-                 .then(data => {
-                     document.getElementById('navbar-container').innerHTML = data;
-                 })
-                 .catch(error => console.error('Error loading navbar:', error));
-         }
-     
-         // Call the function to load the navbar when the page is ready
-         window.onload = loadNavbar;
-     </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florian Oschmann - Freetime</title>  
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Florian Oschmann</h1>
+        <p>Researcher | Academic | Musician</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="./index.html">About</a>
+        <a href="./research.html">Research</a>
+        <a href="./publications.html">Publications</a>
+        <a href="./contact.html">Contact</a>
+        <a href="./teaching.html">Teaching</a>
+        <a href="./freetime.html">Freetime</a>
+    </nav>
 
     <!-- Musiscs -->
-    <section id="freetime">
-        <div id="english-content">
+    <section id="about">
         <h2>Some bands</h2>
             Everybody needs a hobby, and mine is music in general. As a trombone and horn player, I play(ed) in several great orchestras. Check them out!
 
@@ -88,10 +73,14 @@
         <li>
             T. G. Greiner: <i>Panorama-Marsch</i> (<a href="https://www.youtube.com/watch?v=OnEiwdZ7ZgE" target="_blank">YouTube</a>)
         </li>
-    </div>
+    </section>
 
-    <div id="german-content" style="display: none;"></div>
-    <div id="czech-content" style="display: none;"></div>
+    <section>
+        <h2>Own music</h2>
+        In case you want to play something written by myself, try out this:
+        <li>
+            <i>Turbulentia</i> (Brass quintet) (<a href="https://crescendo-brass.de/products/turbulentia" target="_blank">link</a>)
+        </li>
     </section>
 
     <!-- Footer Section -->

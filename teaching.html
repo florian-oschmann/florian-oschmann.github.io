@@ -1,45 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Florian Oschmann - Teaching</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="changelanguage.js"></script>
-    </head>
- <!-- Include the contents of the header directly in each page -->
- <header>
-     <h1>Florian Oschmann</h1>
-     <p>Researcher | Academic | Musician</p>
- </header>
- 
- <!-- Language Dropdown Menu -->
- <select id="language-dropdown" onchange="changeLanguage()">
-     <option value="en">English</option>
-     <option value="de">Deutsch</option>
-     <option value="cz">&Ccaron;e&scaron;tina</option>
- </select>
- <body>
- 
-     <!-- Navigation Bar -->
-     <div id="navbar-container"></div>
-     <script>
-         // Function to load the navigation bar
-         function loadNavbar() {
-             fetch('navbar.html')
-                 .then(response => response.text())
-                 .then(data => {
-                     document.getElementById('navbar-container').innerHTML = data;
-                 })
-                 .catch(error => console.error('Error loading navbar:', error));
-         }
-     
-         // Call the function to load the navbar when the page is ready
-         window.onload = loadNavbar;
-     </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florian Oschmann - Teaching</title>  
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Florian Oschmann</h1>
+        <p>Researcher | Academic | Musician</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="./index.html">About</a>
+        <a href="./research.html">Research</a>
+        <a href="./publications.html">Publications</a>
+        <a href="./contact.html">Contact</a>
+        <a href="./teaching.html">Teaching</a>
+        <a href="./freetime.html">Freetime</a>
+    </nav>
 
     <!-- Teaching Section -->
     <section id="teaching">
-        <div id="english-content">
         <h2>Teaching</h2>
         <p>
             Upcoming classes and material
@@ -116,10 +101,6 @@
                 }
             }
         </script>
-        </div>
-
-        <div id="german-content" style="display: none;"></div>
-        <div id="czech-content" style="display: none;"></div>
     </section>
 </div>
 
