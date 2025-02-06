@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Florian Oschmann - Publications</title>  
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Header Section -->
-    <header>
-        <h1>Florian Oschmann</h1>
-        <p>Researcher | Academic | Musician</p>
-    </header>
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Florian Oschmann - Publications</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="changelanguage.js"></script>
+    </head>
+ <!-- Include the contents of the header directly in each page -->
+ <header>
+     <h1>Florian Oschmann</h1>
+     <p>Researcher | Academic | Musician</p>
+ </header>
+ 
+ <!-- Language Dropdown Menu -->
+ <select id="language-dropdown" onchange="changeLanguage()">
+     <option value="en">English</option>
+     <option value="de">Deutsch</option>
+     <option value="cz">&Ccaron;e&scaron;tina</option>
+ </select>
+ <body>
+ 
+     <!-- Navigation Bar -->
+     <div id="navbar-container"></div>
+     <script>
+         // Function to load the navigation bar
+         function loadNavbar() {
+             fetch('navbar.html')
+                 .then(response => response.text())
+                 .then(data => {
+                     document.getElementById('navbar-container').innerHTML = data;
+                 })
+                 .catch(error => console.error('Error loading navbar:', error));
+         }
+     
+         // Call the function to load the navbar when the page is ready
+         window.onload = loadNavbar;
+     </script>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="./index.html">About</a>
-        <a href="./research.html">Research</a>
-        <a href="./publications.html">Publications</a>
-        <a href="./contact.html">Contact</a>
-        <a href="./teaching.html">Teaching</a>
-        <a href="./freetime.html">Freetime</a>
-    </nav>
-    <section id="research">
-
+    <section id="publication">
+        <div id="english-content">
         Here you can find some of my recent publications. For a full list of publications, see my <a href="./CV.pdf" target="_blank">CV</a>.
 <h2>Recent publications</h2>
         <ol>
@@ -45,7 +60,55 @@
                 <a href="https://doi.org/10.1007/s00220-023-04823-5" target="_blank"> (link) </a>
             </li>
         </ol>
-            
+    </div>    
+    
+    <div id="german-content">
+        Here you can find some of my recent publications. For a full list of publications, see my <a href="./CV.pdf" target="_blank">CV</a>.
+<h2>Recent publications</h2>
+        <ol>
+            <li>
+                Jin, B., Ne&ccaron;asov&aacute;, &Scaron;., <b>Oschmann, F.</b>, Roy, A.: <i>Collision/No-collision results of a solid body with its container in a 3D compressible viscous fluid.</i> Journal of Differential Equations (2025). 
+                (<a href="https://doi.org/10.1016/j.jde.2025.01.057" target="_blank">link</a>) 
+            </li>
+            <li>
+                Ne&ccaron;asov&aacute;, &Scaron;., <b>Oschmann, F.</b>: <i>A collision result for both non-Newtonian and heat conducting Newtonian compressible fluids.</i> Proceedings of the Royal Society of Edinburgh Section A: Mathematics (2024). 
+                (<a href="https://doi.org/10.1017/prm.2024.5" target="_blank">link</a>) 
+            </li>
+            <li><b>Oschmann, F.</b>, Pokorn&yacute;, M.: <i>Homogenization of the unsteady compressible Navier-Stokes equations for adiabatic exponent &gamma; > 3.</i> Journal of Differential Equations (2023) 
+                <a href="https://doi.org/10.1016/j.jde.2023.08.040" target="_blank"> (link)</a> 
+            </li>
+            <li>Bella, P., Feireisl, E., <b>Oschmann, F.</b>: <i>&Gamma;-convergence for nearly incompressible fluids.</i> Journal of Mathematical Physics (2023)
+                <a href="https://doi.org/10.1063/5.0138650" target="_blank"> (link) </a> 
+            </li>
+            <li> Bella, P., Feireisl, E., <b>Oschmann, F.</b>: <i>Rigorous Derivation of the Oberbeck-Boussinesq Approximation Revealing Unexpected Term.</i> Communications in Mathematical Physics (2023)
+                <a href="https://doi.org/10.1007/s00220-023-04823-5" target="_blank"> (link) </a>
+            </li>
+        </ol>
+    </div>    
+
+    <div id="czech-content">
+        Here you can find some of my recent publications. For a full list of publications, see my <a href="./CV.pdf" target="_blank">CV</a>.
+<h2>Recent publications</h2>
+        <ol>
+            <li>
+                Jin, B., Ne&ccaron;asov&aacute;, &Scaron;., <b>Oschmann, F.</b>, Roy, A.: <i>Collision/No-collision results of a solid body with its container in a 3D compressible viscous fluid.</i> Journal of Differential Equations (2025). 
+                (<a href="https://doi.org/10.1016/j.jde.2025.01.057" target="_blank">link</a>) 
+            </li>
+            <li>
+                Ne&ccaron;asov&aacute;, &Scaron;., <b>Oschmann, F.</b>: <i>A collision result for both non-Newtonian and heat conducting Newtonian compressible fluids.</i> Proceedings of the Royal Society of Edinburgh Section A: Mathematics (2024). 
+                (<a href="https://doi.org/10.1017/prm.2024.5" target="_blank">link</a>) 
+            </li>
+            <li><b>Oschmann, F.</b>, Pokorn&yacute;, M.: <i>Homogenization of the unsteady compressible Navier-Stokes equations for adiabatic exponent &gamma; > 3.</i> Journal of Differential Equations (2023) 
+                <a href="https://doi.org/10.1016/j.jde.2023.08.040" target="_blank"> (link)</a> 
+            </li>
+            <li>Bella, P., Feireisl, E., <b>Oschmann, F.</b>: <i>&Gamma;-convergence for nearly incompressible fluids.</i> Journal of Mathematical Physics (2023)
+                <a href="https://doi.org/10.1063/5.0138650" target="_blank"> (link) </a> 
+            </li>
+            <li> Bella, P., Feireisl, E., <b>Oschmann, F.</b>: <i>Rigorous Derivation of the Oberbeck-Boussinesq Approximation Revealing Unexpected Term.</i> Communications in Mathematical Physics (2023)
+                <a href="https://doi.org/10.1007/s00220-023-04823-5" target="_blank"> (link) </a>
+            </li>
+        </ol>
+    </div>    
        
     </section>
     <!-- Footer Section -->
