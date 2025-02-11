@@ -26,81 +26,47 @@
     <!-- Teaching Section -->
     <section id="teaching">
         <h2>Teaching</h2>
-        <p>
-            Upcoming classes and material
-        </p>
+        <li>
+            Mathematical analysis 1, Summer semester 2025
+        </li>
     </section>
 
     <!-- password restricted area -->
     <!-- reference: https://www.tutorialspoint.com/how-to-password-protect-a-page-using-only-html-css-and-javascript -->
     
-    <!-- separate section "materials" inside nav bar "teaching" -->
-    <section id="materials">
+    <!-- script needed to choose the correct PW and container -->
+    <script src="passwords.js"></script>
+
+    <!-- separate section "materials" inside nav bar "teaching"
+    display suppresses display, erase for showing -->
+    <section id="materials" style="display: none;">
         <h2>Teaching materials</h2>
 
         <!-- split into different classes -->
 
-        <!-- Class 1; division ~ section; display suppresses display, erase for showing -->
-        <div style="display: none">
-        <h3>Class 1</h3>
+        <!-- division ~ section -->
+        <div>
+        Type in the password for your specific class to display the content.
         
-        <!-- form here used to afterwards undisplay the PW field -->
-        <form id="pswd1">
-            
-        <!-- placeholder = what is written in box (grey) ... id = identity of/pointer towards input ... onclick = if clicked on "Submit", then fun1() gets started -->
-            
-            <input type="password" id="validate1" placeholder="Enter Password">
-            <button type="button" onclick="fun1()">Submit</button>
+        <!-- form here used to (un)display the PW field
+        id = identity of/pointer towards input -->
+        <form id="pswds">
+
+            <!-- placeholder = what is written in box (grey) 
+            onclick = if clicked on "Submit", then PWfun() gets started -->
+            <input type="password" id="inputPsw" placeholder="Enter Password">
+            <button type="button" onclick="PWfun()">Submit</button>
         </form>
 
         <!-- container = what will be displayed after correct PW -->
         <div id="container1" style="display: none; text-align: left">
-            <a href="./CV.pdf" target="_blank">CV</a>
-            <p>Test field</p>
-            <p><a href="https://www.google.de/" target="_blank">Google</a></p>
+            <p>Container Nr 1</p>
         </div>
-
-        <!-- JavaScript to encrypt/display the container after correct PW -->
-        <script>
-            function fun1() {
-                let inputPswd = document.getElementById("validate1").value; // input from the PW
-                let correctPswd = "Mathclass1"; // correct PW; freely to choose
-                if (inputPswd === correctPswd) {
-                    document.getElementById("container1").style.display = "block"; // block the container display setting
-                    document.getElementById("pswd1").style.display = "none"; // removing the PW box from display
-                } else {
-                    alert("Incorrect password!");
-                }
-            }
-        </script>
-        </div>
-
-        <!-- Class 2 -->
-        <div style="display: none">
-        <h3>Class 2</h3>
-        
-        <form id="pswd2">            
-            <input type="password" id="validate2" placeholder="Enter Password">
-            <button type="button" onclick="fun2()">Submit</button>
-        </form>
 
         <div id="container2" style="display: none; text-align: left">
-            <p>Test field</p>
+            <p>Container Nr 2</p>
         </div>
 
-        <!-- JavaScript to encrypt/display the container after correct PW -->
-        <script>
-            function fun2() {
-                let inputPswd = document.getElementById("validate2").value;
-                let correctPswd = "Mathclass2";
-                if (inputPswd === correctPswd) {
-                    document.getElementById("container2").style.display = "block";
-                    document.getElementById("pswd2").style.display = "none";
-                } else {
-                    alert("Incorrect password!");
-                }
-            }
-        </script>
     </section>
 </div>
 
