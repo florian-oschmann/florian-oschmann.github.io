@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florian Oschmann - Výuka</title>  
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Florian Oschmann</h1>
+        <p>Vědec | Akademik | Hudebník <br>
+            Kancelář: 311, &Zcaron;itn&aacute; 690/25 | Tel.: +420-222 090 742
+        </p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="./indexCZ.html">O mně</a>
+        <a href="./researchCZ.html">Výzkum</a>
+        <a href="./publicationsCZ.html">Publikace</a>
+        <a href="./contactCZ.html">Kontakt</a>
+        <a href="./teachingCZ.html">Výuka</a>
+        <a href="./freetimeCZ.html">Volný čas</a>
+        <div class="dropdown">
+                <button class="dropbtn">Language
+                    <i class="fa fa-caret-down"></i>
+                </button>
+            <div class="dropdown-content">
+                <a href="../index.html">English</a>
+                <a href="../GER/indexDE.html">Deutsch</a>
+                <a href="./indexCZ.html">&#268;e&#353;tina</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Teaching Section -->
+    <section id="currentteaching">
+        <h2>Aktuální výuka</h2>
+        <li>
+            Matematická analyza 1, Letní semestr 2025, Karlova univerzita, Tutor (<a href="https://dl1.cuni.cz/enrol/index.php?id=17472" target="_blank">Moodle</a>)
+        </li>
+    </section>
+
+    <section id="formerteaching">
+        <h2>Minulá výuka</h2>
+        <p>(Detaily jsou v mé <a href="./CV.pdf" target="_blank">CV</a>)</p>
+        <li>
+            2019 - 2022: Analysis I-III, TU Dortmund, Tutor
+        </li>
+        <li>
+            2016 - 2019: Různé cvičení, Universit&auml;t Leipzig, Tutor
+        </li>
+    </section>
+
+    <!-- password restricted area -->
+    <!-- reference: https://www.tutorialspoint.com/how-to-password-protect-a-page-using-only-html-css-and-javascript -->
+    
+    <!-- script needed to choose the correct PW and container -->
+    <script src="passwords.js"></script>
+
+    <!-- separate section "materials" inside nav bar "teaching"
+    display suppresses display, erase for showing -->
+    <section id="materials" style="display: none;">
+        <h2>Teaching materials</h2>
+
+        <!-- split into different classes -->
+
+        <!-- division ~ section -->
+        <div>
+        Type in the password for your specific class to display the content.
+        
+        <!-- form here used to (un)display the PW field
+        id = identity of/pointer towards input -->
+        <form id="pswds">
+
+            <!-- placeholder = what is written in box (grey) 
+            onclick = if clicked on "Submit", then PWfun() gets started -->
+            <input type="password" id="inputPsw" placeholder="Enter Password">
+            <button type="button" onclick="PWfun()">Submit</button>
+        </form>
+
+        <!-- container = what will be displayed after correct PW -->
+        <div id="container1" style="display: none; text-align: left">
+            <p>Container Nr 1</p>
+        </div>
+
+        <div id="container2" style="display: none; text-align: left">
+            <p>Container Nr 2</p>
+        </div>
+
+    </section>
+</div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Florian Oschmann. All rights reserved.</p>
+    </footer>
+</body>
+</html>
