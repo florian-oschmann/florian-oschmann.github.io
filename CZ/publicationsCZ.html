@@ -80,8 +80,16 @@
        
     </section>
     <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2025 Florian Oschmann. All rights reserved.</p>
+   <footer>
+        <p>&copy; <span id="currentYear"></span>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                var currentYear = new Date().getFullYear();
+                document.getElementById('currentYear').textContent = currentYear;
+                });
+            </script>
+        Florian Oschmann. All rights reserved.
+        </p>
     </footer>
 
 
