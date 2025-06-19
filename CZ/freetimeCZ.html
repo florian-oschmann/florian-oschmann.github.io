@@ -91,13 +91,21 @@
         <h2>Vlastní</h2>
         Pokud si chcete přehrát něco přímo ode mě, tady to je:
         <li>
-            <i>Turbulentia</i> (Quintett f&uuml;r Blechbl&auml;ser) (<a href="https://crescendo-brass.de/products/turbulentia" target="_blank">link</a>)
+            <i>Turbulentia</i> (žesťový kvintet) (<a href="https://crescendo-brass.de/products/turbulentia" target="_blank">link</a>)
         </li>
     </section>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 Florian Oschmann. All rights reserved.</p>
+        <p>&copy; <span id="currentYear"></span>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                var currentYear = new Date().getFullYear();
+                document.getElementById('currentYear').textContent = currentYear;
+                });
+            </script>
+        Florian Oschmann. All rights reserved.
+        </p>
     </footer>
 </body>
 </html>
