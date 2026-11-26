@@ -1,0 +1,145 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\newcommand{\R}{\mathbb{R}}
+
+\title{exp, log, sin, cos, a vzory $1^\infty$}
+
+\begin{document}
+\maketitle
+
+Definice funkcí $\exp, \ \log, \ \sin, \ \cos$ tady neopakuji, najdete je ve vašich poznámkách z přednášky, tak budeme s nimi jen pracovat. Důležité spojení jsou
+\begin{align*}
+\exp(x) = \lim_{n \to \infty} \left(1 + \frac{x}{n}\right)^n, && \exp (\log(x)) = x \ \forall x \in (0,\infty), && \log(\exp(x)) = x \ \forall x \in \R, \\
+\sin(x+\pi)=-\sin(x), && \cos(x+\pi) = - \cos(x), && \sin(x+\frac{\pi}{2}) = \cos(x).
+\end{align*}
+
+Další definice funkcí tangens a cotangens jsou
+\begin{align*}
+\tan(x) &= \frac{\sin x }{\cos x} \ (x \neq (2k+1) \frac{\pi}{2}, \ k \in \mathbb{Z}), \\
+\cot(x) &= \frac{\cos x}{\sin x} = \frac{1}{\tan x} \ (x \neq k \pi, \ k \in \mathbb{Z}).
+\end{align*}
+
+Jak to používat pro limity vzoru $1^\infty$? Vezmeme si příklady ze sbírky, úkol 27:
+\begin{align*}
+\lim_{n \to \infty} \left(1 + \frac1n \right)^{3n} = \lim_{n \to \infty} \left(\left(1 + \frac1n \right)^{n} \right)^3 = \left( \lim_{n \to \infty} \left(1 + \frac1n \right)^{n} \right)^3 = e^3.
+\end{align*}
+Tady jsem použil, že funkce $x \mapsto x^3$ je spojitá, abych mohl vyměnit limitu a závorky.\\
+
+Zajímavější příklad je
+\begin{align*}
+\lim_{x \to 0} (1+4x)^\frac{1}{3x}.
+\end{align*}
+Obecně si to přepíšeme pomocí $\exp(\log x) = x = \log (\exp x)$, a že tyto funkce jsou na svém definičním oboru spojité (to je vlastně nejdůležitější detail, který nám dovolí udělat, co budeme dělat). Obecně tedy máme: Platí-li
+\begin{align*}
+\lim_{x \to x_0} f(x) = 1, && \lim_{x \to x_0} g(x) = \infty,
+\end{align*}
+pak si přepíšeme
+\begin{align*}
+\lim_{x \to x_0} f(x)^{g(x)} = \lim_{x \to x_0} e^{g(x) \log(f(x))} = e^{\lim_{x \to x_0} g(x) \log(f(x))},
+\end{align*}
+a pracujeme jenom se vnitřní limitou. Tímto způsobem uděláme ze vzoru $1^\infty$ vzor $0 \cdot \infty$, a s tím můžeme pracovat lépe. Proč to vůbec smíme? Kvůli tomu, že $\lim_{x \to x_0} f(x) = 1$, platí v nějaké okolí bodu $x_0$, že $f(x)>0$ v tomto okolí, a tak $\log f(x)$ je definováno. Potom použijeme, že funkce $\exp$ je spojitá, abychom můžeme vyměnit $\exp$ a limitu. Spočítáme-li 
+\begin{align*}
+\lim_{x \to x_0} g(x) \log(f(x)) = a,
+\end{align*}
+pak platí
+\begin{align*}
+\lim_{x \to x_0} f(x)^{g(x)} = e^a.
+\end{align*}
+
+Zpátky k příkladu: přepíšeme si to na
+\begin{align*}
+\lim_{x \to 0} (1+4x)^\frac{1}{3x} = \lim_{x \to 0} e^{\frac{1}{3x} \log(1+4x)} = e^{\lim_{x \to 0} \frac{1}{3x} \log(1+4x)},
+\end{align*}
+a pracujeme jen se vnitřní limitou. Pomocí známého vzorce
+\begin{align*}
+\lim_{x \to 0} \frac{\log(1+x)}{x} = 1
+\end{align*}
+pokračujeme přepsat
+\begin{align*}
+\frac{1}{3x} \log(1+4x) = \frac{\log(1+4x)}{3x} = \frac{\log(1+4x)}{4x} \frac{4}{3},
+\end{align*}
+a takto máme
+\begin{align*}
+\lim_{x \to 0} \frac{1}{3x} \log(1+4x) = \frac43 \lim_{x \to 0} \frac{\log(1+4x)}{4x} \overset{y:=4x}{=} \frac43 \lim_{y \to 0} \frac{\log(1+y)}{y} = \frac43.
+\end{align*}
+Celkem takto dostaneme
+\begin{align*}
+\lim_{x \to 0} (1+4x)^\frac{1}{3x} = e^{\lim_{x \to 0} \frac{1}{3x} \log(1+4x)} = e^\frac43.
+\end{align*}
+
+Další, těžší příklad je
+\begin{align*}
+\lim_{x \to \frac{\pi}{4}} (\tan x)^{\tan(2x)}.
+\end{align*}
+Stejně jako předtím máme
+\begin{align*}
+\lim_{x \to \frac{\pi}{4}} (\tan x)^{\tan(2x)} = e^{\lim_{x \to \frac{\pi}{4}} \tan(2x) \log (\tan x)}.
+\end{align*}
+Pak zkusíme nějakým způsobem dostat něco jako známé $\log(1+x)/x$, nebo $\sin(x)/x$ atd. Přepíšeme tedy
+\begin{align*}
+\tan(2x) \log (\tan x) &= \tan(2x) \log (1 + (\tan(x) - 1)) \\
+&= \tan(2x) (\tan(x)-1) \frac{\log (1 + (\tan(x) - 1))}{\tan(x) - 1}.
+\end{align*}
+Poslední zlomek připomíná $\log(1+y)/y$ s $y = \tan(x)-1$ a kvůli tomu, že $\tan(\frac{\pi}{4})=1$, máme v limitě $x \to \frac{\pi}{4}$ pak $y \to 0$. Jinými slovy, poslední limitu už známe, a rovná se
+\begin{align*}
+\lim_{x \to \frac{\pi}{4}} \frac{\log (\tan(x))}{\tan(x) - 1} = \lim_{y \to 0} \frac{\log(1+y)}{y} = 1.
+\end{align*}
+Soustřeďme se tedy na první součin, který stále má vzor $0 \cdot \infty$: použijme
+\begin{align*}
+\sin(x+y) &= \sin(x)\cos(y) + \cos(x)\sin(y), \\
+\cos(x+y) &= \cos(x)\cos(y) - \sin(x)\sin(y),
+\end{align*}
+máme zejména
+\begin{align*}
+&\sin(2x) = 2 \sin(x) \cos(x), \ \cos(2x) = \cos^2(x) - \sin^2(x) \\
+& \Rightarrow \tan(2x) = \frac{\sin(2x)}{\cos(2x)} = \frac{2 \sin(x) \cos(x)}{\cos^2(x) - \sin^2(x)},
+\end{align*}
+a takto
+\begin{align*}
+\tan(2x) (\tan(x)-1) &= \frac{\sin(2x)}{\cos(2x)} \left( \frac{\sin(x) - \cos(x)}{\cos(x)} \right) = \frac{2 \sin(x) \cos(x) (\sin(x) - \cos(x))}{\cos(x) (\cos^2(x) - \sin^2(x))} \\
+&= - \frac{2 \sin(x) }{\cos(x) + \sin(x)},
+\end{align*}
+kde jsme použili $(a^2-b^2) = (a-b)(a+b)$. Ten poslední zlomek má limitu, a to
+\begin{align*}
+\lim_{x \to \frac{\pi}{4}} \left( - \frac{2 \sin(x) }{\cos(x) + \sin(x)} \right) = - \frac{2 \sin(\pi/4) }{\cos(\pi/4) + \sin(\pi/4)} = -1.
+\end{align*}
+(Tady ani nemusíte vědět, jaké jsou hodnoty $\sin(\pi/4)$ a $\cos(\pi/4)$, stačí vědět, že se rovnají.) Celkem takto dostaneme
+\begin{align*}
+\lim_{x \to \frac{\pi}{4}} \tan(2x) \log (\tan x) = \lim_{x \to \frac{\pi}{4}} \left( - \frac{2 \sin(x) }{\cos(x) + \sin(x)} \right) \frac{\log (\tan(x))}{\tan(x) - 1} = -1 \cdot 1 = -1,
+\end{align*}
+a takto
+\begin{align*}
+\lim_{x \to \frac{\pi}{4}} (\tan x)^{\tan(2x)} = e^{-1}.
+\end{align*}
+
+\underline{Cesta v kostce:} Máme-li
+\begin{align*}
+\lim_{x \to x_0} f(x)^{g(x)}, && \lim_{x \to x_0} f(x) = 1, && \lim_{x \to x_0} g(x) = \infty,
+\end{align*}
+pak:
+\begin{itemize}
+\item Přepíšeme to na 
+\begin{align*}
+\lim_{x \to x_0} f(x)^{g(x)} = e^{\lim_{x \to x_0} g(x) \log(f(x))}
+\end{align*}
+\item Pracujeme se vnitřní limitou a přepíšeme ji na vzor, který známé, jak je např.
+\begin{align*}
+\frac{\log(1+x)}{x}, && \frac{\sin x}{x}, && \frac{\exp(x)-1}{x}, && \frac{\cos(x)-1}{x^2},
+\end{align*}
+a použijeme známé limity.
+\item Máme-li
+\begin{align*}
+\lim_{x \to x_0} g(x) \log(f(x)) = a,
+\end{align*}
+pak dána limita je
+\begin{align*}
+\lim_{x \to x_0} f(x)^{g(x)} = e^a.
+\end{align*}
+\end{itemize}
+To samé platí i, pokud je $\lim_{x \to x_0} g(x) = - \infty$; v tomto případě si všechno přepíšeme na $f(x)^{g(x)} = 1/ f(x)^{-g(x)}$.
+\end{document}
